@@ -1,4 +1,4 @@
-# Sharaf DG Automation Assignment
+# Sharaf DG UI Test Automation Assignment
 
 ## Features
 
