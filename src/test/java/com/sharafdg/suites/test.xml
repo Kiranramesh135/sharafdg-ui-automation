@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="AutomationSuite">
+    <listeners>
+        <listener class-name="org.testng.reporters.EmailableReporter2"></listener>
+    </listeners>
+    <test name="SharafDG Tests">
+        <classes>
+            <class name="com.sharafdg.tests.TestSharafdgWebsite">
+<!--            <methods>-->
+<!--                <include name="testUserRegistration"/>-->
+<!--                <include name="testProductPurchase"/>-->
+<!--            </methods>-->
+            </class>
+        </classes>
+    </test>
+</suite>
