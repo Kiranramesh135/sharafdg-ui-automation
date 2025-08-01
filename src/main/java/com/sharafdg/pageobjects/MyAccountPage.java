@@ -17,7 +17,7 @@ public class MyAccountPage {
     @FindBy(xpath = "//h1[contains(@class,'headline')]")
     WebElement headLine;
 
-    @FindBy(id="phone-email")
+    @FindBy(id = "phone-email")
     WebElement emailIdTextBox;
 
     @FindBy(xpath = "//a[contains(@class,'btn btn-secondary')]")
@@ -26,10 +26,10 @@ public class MyAccountPage {
     @FindBy(xpath = "//input[contains(@type,'submit')]")
     WebElement nextButton;
 
-    @FindBy(id="login_with_password")
+    @FindBy(id = "login_with_password")
     WebElement loginWithPasswordButton;
 
-    @FindBy(id="password")
+    @FindBy(id = "password")
     WebElement passwordTextBox;
 
     @FindBy(xpath = "//input[contains(@name,'login')]")
@@ -55,7 +55,6 @@ public class MyAccountPage {
         wait.until(ExpectedConditions.visibilityOf(emailIdTextBox));
         emailIdTextBox.sendKeys(emailID);
         nextButton.click();
-
     }
 
     public void loginWithPassword(String password) {
@@ -64,7 +63,5 @@ public class MyAccountPage {
         wait.until(ExpectedConditions.visibilityOf(passwordTextBox));
         passwordTextBox.sendKeys(password);
         loginButton.click();
-
-
     }
 }

@@ -14,6 +14,9 @@ public class ProductDetailsPage {
     WebDriver driver;
     WebDriverWait wait;
 
+    @FindBy(xpath = "//button[contains(@class,'btn btn-white icon-close')]")
+    WebElement cookieNoteButton;
+
     @FindBy(xpath = "//h1[contains(text(),'Apple iPhone 14 Pro (256GB) – Silver')]")
     WebElement productName;
 
@@ -34,9 +37,9 @@ public class ProductDetailsPage {
 
         wait.until(ExpectedConditions.visibilityOf(productName));
         addToCartButton.click();
+        wait.until(ExpectedConditions.visibilityOf(cookieNoteButton));
+        cookieNoteButton.click();
         wait.until(ExpectedConditions.visibilityOf(proceedToCheckOutButton));
         proceedToCheckOutButton.click();
     }
-
-
 }

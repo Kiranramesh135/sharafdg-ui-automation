@@ -1,6 +1,5 @@
 package com.sharafdg.pageobjects;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,11 +14,10 @@ public class HomePage {
     WebDriver driver;
     WebDriverWait wait;
 
-//    @FindBy(xpath="//a[contains(@class,'top_login')]")
-    @FindBy(xpath="//div[contains(@class,'login-wrp')]")
+    @FindBy(xpath = "//div[contains(@class,'login-wrp')]")
     WebElement signInButton;
 
-    @FindBy(xpath="//span[contains(@class,'signin-text')]")
+    @FindBy(xpath = "//span[contains(@class,'signin-text')]")
     WebElement signedInUserName;
 
     public HomePage(WebDriver driver) {
@@ -34,8 +32,6 @@ public class HomePage {
     }
 
     public String getSignedInUserName() {
-//        signedInUserName = driver.findElement(By.xpath("//span[contains(@class,'signin-text')]"));
-//        wait.until(ExpectedConditions.visibilityOf(signedInUserName));
 
         int attempts = 0;
         while (attempts < 3) {

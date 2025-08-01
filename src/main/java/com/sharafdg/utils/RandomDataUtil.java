@@ -15,7 +15,7 @@ public class RandomDataUtil {
     };
 
     public static String getRandomFirstName() {
-        return capitalize(getRandomString(6));
+        return capitalize(getRandomString(8));
     }
 
     public static String getRandomLastName() {
@@ -23,7 +23,7 @@ public class RandomDataUtil {
     }
 
     public static String getRandomEmail() {
-        String localPart = "user_" + UUID.randomUUID().toString().substring(0, 6);
+        String localPart = "user_" + UUID.randomUUID().toString().substring(0, 8);
         String domain = EMAIL_DOMAINS[RANDOM.nextInt(EMAIL_DOMAINS.length)];
         return localPart + "@" + domain;
     }

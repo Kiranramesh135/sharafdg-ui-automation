@@ -16,50 +16,29 @@ public class CheckoutPage {
     WebDriver driver;
     WebDriverWait wait;
 
-    @FindBy(xpath="//button[contains(@class,'btn btn-white icon-close')]")
-    WebElement cookieNoteButton;
-
-    @FindBy(id="shipping_first_name")
+    @FindBy(id = "shipping_first_name")
     WebElement firstNameTextBox;
 
-    @FindBy(id="shipping_last_name")
+    @FindBy(id = "shipping_last_name")
     WebElement lastNameTextBox;
-
-    @FindBy(id="shipping_state")
-    WebElement shippingStateDropDown;
 
     @FindBy(xpath = "(//input[contains(@placeholder,'Search')])[1]")
     WebElement emiratesDropDown;
 
-//    @FindBy(xpath = "(//input[contains(@placeholder,'Search')])[1]")
     @FindBy(xpath = "//label[contains(text(),'Area')]/..//input[contains(@placeholder,'Search')]")
     WebElement areaDropDown;
 
-    @FindBy(id = "(shipping_city")
-    WebElement shippingCity;
-
-    @FindBy(id="shipping_address_1")
+    @FindBy(id = "shipping_address_1")
     WebElement addressTextBox;
 
-    @FindBy(id="payment_method_cod")
+    @FindBy(id = "payment_method_cod")
     WebElement codRadioButton;
 
-    @FindBy(id="place_order")
+    @FindBy(id = "place_order")
     WebElement placeOrderButton;
 
-    @FindBy(xpath="//h3[contains(@class,'woocommerce-thankyou-order-received')]")
-    WebElement orderComfirmationText;
-
-
-
-
-
-
-
-
-//    Search textbox in dropdown
-//    //input[contains(@placeholder,'Search')]
-
+    @FindBy(xpath = "//h3[contains(@class,'woocommerce-thankyou-order-received')]")
+    WebElement orderConfirmationText;
 
     public CheckoutPage(WebDriver driver) {
         this.driver = driver;
@@ -69,33 +48,26 @@ public class CheckoutPage {
 
     public String enterDetailsAndCheckout(String firstName, String lastName, String shippingState, String area, String address) {
         try {
-            wait.until(ExpectedConditions.visibilityOf(cookieNoteButton));
-            cookieNoteButton.click();
+
             wait.until(ExpectedConditions.visibilityOf(firstNameTextBox));
             firstNameTextBox.clear();
             firstNameTextBox.sendKeys(firstName);
             lastNameTextBox.clear();
             lastNameTextBox.sendKeys(lastName);
             emiratesDropDown.sendKeys(shippingState);
+            emiratesDropDown.click();
             lastNameTextBox.click();
             lastNameTextBox.sendKeys(Keys.TAB);
             emiratesDropDown.sendKeys(Keys.TAB);
             wait.until(ExpectedConditions.visibilityOf(areaDropDown));
             areaDropDown.sendKeys(area);
             areaDropDown.sendKeys(Keys.TAB);
-            try {
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            Thread.sleep(5000);
+
             ((JavascriptExecutor) driver).executeScript("scroll(0,450)");
             wait.until(ExpectedConditions.visibilityOf(addressTextBox));
             addressTextBox.sendKeys(address);
-            try {
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            Thread.sleep(5000);
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             long lastHeight = (long) js.executeScript("return document.body.scrollHeight");
@@ -116,16 +88,14 @@ public class CheckoutPage {
             Thread.sleep(5000);
             wait.until(ExpectedConditions.visibilityOf(placeOrderButton));
             placeOrderButton.click();
-            wait.until(ExpectedConditions.visibilityOf(orderComfirmationText));
+            wait.until(ExpectedConditions.visibilityOf(orderConfirmationText));
 
-        } catch (Exception e) {
+        } catch (InterruptedException e) {
             System.out.println("Error in completeCheckout: " + e.getMessage());
             e.printStackTrace();
         }
 
-        return orderComfirmationText.getText();
-        }
-
-
+        return orderConfirmationText.getText();
+    }
 
 }

@@ -15,30 +15,29 @@ public class RegistrationPage {
     WebDriver driver;
     WebDriverWait wait;
 
-    @FindBy(id="reg_email")
+    @FindBy(id = "reg_email")
     WebElement emailAddressTextBox;
 
-    @FindBy(id="reg_password")
+    @FindBy(id = "reg_password")
     WebElement passwordTextBox;
 
-    @FindBy(id="first_name")
+    @FindBy(id = "first_name")
     WebElement firstNameTextBox;
 
-    @FindBy(id="last_name")
+    @FindBy(id = "last_name")
     WebElement lastNameTextBox;
 
-    @FindBy(id="account_mobile_no")
+    @FindBy(id = "account_mobile_no")
     WebElement accountMobileTextBox;
 
-    @FindBy(id="otp_terms")
+    @FindBy(id = "otp_terms")
     WebElement termsCheckBox;
 
-    @FindBy(xpath="//input[contains(@name,'register')]")
+    @FindBy(xpath = "//input[contains(@name,'register')]")
     WebElement registerButton;
 
-    @FindBy(xpath="//button[contains(@class,'btn btn-white icon-close')]")
+    @FindBy(xpath = "//button[contains(@class,'btn btn-white icon-close')]")
     WebElement cookieNoteButton;
-
 
     public RegistrationPage(WebDriver driver) {
         this.driver = driver;
@@ -59,6 +58,4 @@ public class RegistrationPage {
         jse.executeScript("arguments[0].scrollIntoView(true);", registerButton);
         registerButton.click();
     }
-
-
 }
