@@ -85,7 +85,7 @@ public class TestSharafdgWebsite extends BaseTest{
         driver.get("https://uae.sdgstage.com/product/apple-iphone-14-pro-256gb-silver-physical-dual-sim-international-version/?promo=2587484");
         Reporter.log("Navigate to product page");
         productDetailsPage.addToCartAndCheckout();
-        Reporter.log("Checkout, enter address details, select payment method and place order");
+        Reporter.log("Add to cart, checkout, enter address details, select payment method and place order");
         String actualOrderConfirmationMsg = checkoutPage.enterDetailsAndCheckout(firstName, lastName, "Dubai", "Abu Hail", "Abu Hail Street");
         Assert.assertEquals(actualOrderConfirmationMsg,"Thank you for 20 years of tech, trust, and transformation.");
         Reporter.log("Assert order confirmation message");
