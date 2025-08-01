@@ -29,7 +29,6 @@ public class TestSharafdgWebsite extends BaseTest {
         registrationPage = new RegistrationPage(driver);
         productDetailsPage = new ProductDetailsPage(driver);
         checkoutPage = new CheckoutPage(driver);
-
     }
 
     @Test(description = "New user registration flow", priority = 1)
@@ -40,7 +39,7 @@ public class TestSharafdgWebsite extends BaseTest {
         firstName = RandomDataUtil.getRandomFirstName();
         lastName = RandomDataUtil.getRandomLastName();
         phoneNumber = "582949109";
-        
+
         homePage.clickOnSignInButton();
         Reporter.log("Landed on HomePage and clicked on signIn button");
         Assert.assertEquals(myAccountPage.getPageHeadLine(), "Welcome");
@@ -50,7 +49,6 @@ public class TestSharafdgWebsite extends BaseTest {
         Reporter.log("Entered user details and clicked on Register button in Registration page");
         Assert.assertEquals(homePage.getSignedInUserName(), firstName.toUpperCase());
         Reporter.log("Asserted the user name in HomePage after user registration");
-
     }
 
     @Test(description = "User login flow", priority = 2)
@@ -82,7 +80,7 @@ public class TestSharafdgWebsite extends BaseTest {
         driver.get("https://uae.sdgstage.com/product/apple-iphone-14-pro-256gb-silver-physical-dual-sim-international-version/?promo=2587484");
         Reporter.log("Navigate to ProductPage");
         productDetailsPage.addToCartAndCheckout();
-        Reporter.log("Add to cart, checkout, enter address details, select payment method and place order");
+        Reporter.log("Add product to cart, checkout, enter address details, select payment method and place order");
         String actualOrderConfirmationMsg = checkoutPage.enterDetailsAndCheckout(firstName, lastName, "Dubai", "Abu Hail", "Abu Hail Street");
         Assert.assertEquals(actualOrderConfirmationMsg, "Thank you for 20 years of tech, trust, and transformation.");
         Reporter.log("Assert order confirmation message");

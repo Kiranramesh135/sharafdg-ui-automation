@@ -8,29 +8,23 @@
     <url>http://maven.apache.org</url>
 
     <properties>
-        <!-- Set Java version compatibility -->
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <java.version>11</java.version> <!-- Default version -->
+        <java.version>11</java.version>
     </properties>
 
     <dependencies>
-        <!-- Selenium -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.20.0</version>
         </dependency>
-
-        <!-- TestNG -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.10.1</version>
             <scope>test</scope>
         </dependency>
-
-        <!-- WebDriverManager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
