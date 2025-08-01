@@ -46,7 +46,7 @@
      <version>3.2.5</version>
      <configuration>
        <suiteXmlFiles>
-         <suiteXmlFile>src/test/java/com/sharafdg/suites/test.xml</suiteXmlFile>
+         <suiteXmlFile>test.xml</suiteXmlFile>
        </suiteXmlFiles>
      </configuration>
    </plugin>

@@ -37,8 +37,9 @@ public class DriverManager {
     }
 
     private static void waitForPageLoad() {
-        new WebDriverWait(driver, Duration.ofSeconds(20)).until((ExpectedCondition<Boolean>) wd ->
-                ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete")
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(
+                (ExpectedCondition<Boolean>) wd ->
+                        ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete")
         );
     }
 }
