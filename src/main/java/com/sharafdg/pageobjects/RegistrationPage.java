@@ -36,9 +36,6 @@ public class RegistrationPage {
     @FindBy(xpath = "//input[contains(@name,'register')]")
     WebElement registerButton;
 
-    @FindBy(xpath = "//button[contains(@class,'btn btn-white icon-close')]")
-    WebElement cookieNoteButton;
-
     public RegistrationPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -53,7 +50,6 @@ public class RegistrationPage {
         lastNameTextBox.sendKeys(lastName);
         accountMobileTextBox.sendKeys(mobileNumber);
         termsCheckBox.click();
-        cookieNoteButton.click();
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].scrollIntoView(true);", registerButton);
         registerButton.click();

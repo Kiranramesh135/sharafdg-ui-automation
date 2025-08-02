@@ -14,6 +14,9 @@ public class HomePage {
     WebDriver driver;
     WebDriverWait wait;
 
+    @FindBy(xpath = "//button[contains(@class,'btn btn-white icon-close')]")
+    WebElement cookieNoteButton;
+
     @FindBy(xpath = "//div[contains(@class,'login-wrp')]")
     WebElement signInButton;
 
@@ -27,6 +30,8 @@ public class HomePage {
     }
 
     public void clickOnSignInButton() {
+        wait.until(ExpectedConditions.visibilityOf(cookieNoteButton));
+        cookieNoteButton.click();
         wait.until(ExpectedConditions.visibilityOf(signInButton));
         signInButton.click();
     }
