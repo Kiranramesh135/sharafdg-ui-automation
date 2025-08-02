@@ -66,5 +66,5 @@ Execute command 'mvn test' using terminal/command prompt after navigating to  's
 
 ## Test Report
 
-- Test report will be present under sharafdg-ui-automation/target/surefire-reports/emailable-report.html
+- Test report will be present in sharafdg-ui-automation/target/surefire-reports/emailable-report.html
 - Open this report in a browser like chrome
