@@ -61,6 +61,7 @@ public class CheckoutPage {
             emiratesDropDown.sendKeys(Keys.TAB);
             wait.until(ExpectedConditions.visibilityOf(areaDropDown));
             areaDropDown.sendKeys(area);
+            areaDropDown.click();
             areaDropDown.sendKeys(Keys.TAB);
             Thread.sleep(5000);
 
