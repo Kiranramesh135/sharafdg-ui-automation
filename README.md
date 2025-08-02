@@ -33,31 +33,37 @@
 
 8. In pom.xml file, in <java.version>11</java.version> tag, update the value 11 to the Java version you are using. Example - 17, 21.
 
+## Assumptions Made
+
+- This automation framework is developed and tested on macOS.
+
+- It is assumed that the automation scripts will run on the staging environment of SharafDG: https://uae.sdgstage.com.
+
+- It is assumed that the system where the tests are run has Java (version 11 or above) and Maven installed and correctly configured with environment variables.
+
+- Automation is primarily designed and tested for Google Chrome. Other browsers are not guaranteed to work unless additional setup is done.
+
+- Web elements' locators (IDs, xpath, etc.) on the staging site are assumed to remain stable. Any major changes may require locator updates.
+
+- It is assumed that the application under test has stable and predictable load.
+Page load waits are handled using explicit waits
+
+- WebDriverManager handles browser driver binaries automatically.
+
+- Internet connection is available during execution for WebDriverManager to resolve drivers.
+
+- No proxy or firewall restrictions block WebDriverManager or browser access.
+
 
 ## Test Execution Instructions
 
 Execute command 'mvn test' using terminal/command prompt after navigating to  'sharafdg-ui-automation' folder
 
-## Assumptions Made
-
-### Test Environment
-It is assumed that the automation scripts will run on the staging environment of SharafDG: https://uae.sdgstage.com.
-
-### Java and Maven Setup
-It is assumed that the system where the tests are run has Java (version 11 or above) and Maven installed and correctly configured with environment variables.
-
-### Browser Compatibility
-Automation is primarily designed and tested for Google Chrome. Other browsers are not guaranteed to work unless additional setup is done.
-
-### Stable Locators
-Web elements' locators (IDs, xpath, etc.) on the staging site are assumed to remain stable. Any major changes may require locator updates.
-
-### Network and Page Load
-It is assumed that the application under test has stable and predictable load.
-Page load waits are handled using explicit waits
 
 
-## Report
+
+
+## Test Report
 
 - Test report will be present under sharafdg-ui-automation/target/surefire-reports/emailable-report.html
 - Open this report in a browser like chrome

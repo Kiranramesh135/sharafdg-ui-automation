@@ -34,11 +34,10 @@ public class ProductDetailsPage {
     }
 
     public void addToCartAndCheckout() {
-
-        wait.until(ExpectedConditions.visibilityOf(productName));
-        addToCartButton.click();
         wait.until(ExpectedConditions.visibilityOf(cookieNoteButton));
         cookieNoteButton.click();
+        wait.until(ExpectedConditions.visibilityOf(productName));
+        addToCartButton.click();
         wait.until(ExpectedConditions.visibilityOf(proceedToCheckOutButton));
         proceedToCheckOutButton.click();
     }
