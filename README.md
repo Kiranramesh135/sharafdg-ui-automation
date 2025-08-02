@@ -35,7 +35,7 @@
 
 ## Assumptions Made
 
-- This automation framework is developed and tested on macOS.
+- It is assumed that the pages will load within 3 minutes, if the page load takes more than 3 minutes, the framework execution fails due to timeout
 
 - It is assumed that the automation scripts will run on the staging environment of SharafDG: https://uae.sdgstage.com.
 
