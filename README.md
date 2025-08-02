@@ -23,7 +23,7 @@
 
 3. Install git
 
-4. Install Chrome browser (This framework is tested latest version of Chrome browser - 138.0.7204.183)
+4. Install Chrome browser (This framework is tested on latest version of Chrome browser - 138.0.7204.183)
 
 5. Repo - https://github.com/Kiranramesh135/sharafdg-ui-automation.git
 
