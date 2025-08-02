@@ -54,14 +54,9 @@ Page load waits are handled using explicit waits
 
 - No proxy or firewall restrictions block WebDriverManager or browser access.
 
-
 ## Test Execution Instructions
 
 Execute command 'mvn test' using terminal/command prompt after navigating to  'sharafdg-ui-automation' folder
-
-
-
-
 
 ## Test Report
 
