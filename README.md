@@ -1,10 +1,12 @@
 # Sharaf DG UI Test Automation Assignment
 
+
 ## Flows Tested
 
 - Registration Flow
 - Login Flow
 - Product Purchase Flow (Add to Cart → Checkout → Payment)
+
 
 ## Tools Used
 
@@ -14,6 +16,7 @@
 - Maven
 - Page Object Model (POM)
 - Chrome browser
+
 
 ## Setup Instructions
 
@@ -32,6 +35,7 @@
 7. Branch name - main
 
 8. In pom.xml file, in <java.version>11</java.version> tag, update the value 11 to the Java version you are using. Example - 17, 21.
+
 
 ## Assumptions Made
 
@@ -54,9 +58,11 @@ Page load waits are handled using explicit waits
 
 - No proxy or firewall restrictions block WebDriverManager or browser access.
 
+
 ## Test Execution Instructions
 
 Execute command 'mvn test' using terminal/command prompt after navigating to  'sharafdg-ui-automation' folder
+
 
 ## Test Report
 
