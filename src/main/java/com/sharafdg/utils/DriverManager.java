@@ -26,7 +26,7 @@ public class DriverManager {
             ChromeOptions options = new ChromeOptions();
             options.setAcceptInsecureCerts(true);
             driver = new ChromeDriver(options);
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(120));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(180));
             driver.manage().window().maximize();
             driver.get("https://uae.sdgstage.com");
             waitForPageLoad();
