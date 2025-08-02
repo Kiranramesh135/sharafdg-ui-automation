@@ -14,7 +14,7 @@ public class ProductDetailsPage {
     WebDriver driver;
     WebDriverWait wait;
 
-    @FindBy(xpath = "//h1[contains(text(),'Apple iPhone 14 Pro (256GB) – Silver')]")
+    @FindBy(xpath = "//h1[contains(text(),'Apple iPhone 14 Pro')]")
     WebElement productName;
 
     @FindBy(xpath = "(//button[contains(normalize-space(), 'Add to Cart')])[1]")
